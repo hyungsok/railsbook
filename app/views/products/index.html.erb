@@ -1,0 +1,30 @@
+<h1>Products</h1>
+<hr/>
+
+<p>
+  Download:
+  <%= link_to "CSV", products_path(format: "csv") %>
+  <!-- 엑셀로 export 하는건 이슈가 있음
+  <%= link_to "Excel(xls)", products_path(format: "xls") %> |
+  <%= link_to "Excel(xlsx)", products_path(format: "xlsx") %>
+  -->
+</p>
+<%= form_tag import_products_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+<p id="notice"><%= notice %> </p>
+<hr/>
+
+<table id="products">
+  <tr>
+    <th>Product Name</th>
+    <th>Release Date</th>
+    <th>Price</th>
+  </tr>
+
+  <%= render @products %>
+</table>
+
+<hr/>
+<%= link_to 'Back', root_path %>
