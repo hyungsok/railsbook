@@ -54,13 +54,14 @@ class RecordsController < ApplicationController
 
   def reorder
     # @books = Book.order(:publish).order(:price)
+    # 앞에있는 order의 데이터를 날려준다.
     @books = Book.order(:publish).reorder(:price)
     # @books = Book.order(:publish).reorder(nil)
     render 'books/index'
   end
 
   def select
-    @books = Book.where('price >= 20000').select(:isbn, :title, :price)
+    @books = Book.select(:isbn, :title, :price).where('price >= 20000')
     render 'books/index'
   end
 
@@ -76,6 +77,7 @@ class RecordsController < ApplicationController
   end
 
   def page
+    # records/page/4
     page_size = 3
     page_num = params[:id] == nil ? 0 : params[:id].to_i - 1
     @books = Book.order(published: :desc).limit(page_size).offset(page_size * page_num)
@@ -108,6 +110,7 @@ class RecordsController < ApplicationController
     render 'books/index'
   end
 
+  # records/none/all, new, cheap ...
   def none
     case params[:id]
       when 'all'
