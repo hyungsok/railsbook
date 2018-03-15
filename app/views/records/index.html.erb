@@ -1,0 +1,24 @@
+<h2>다양한 쿼리 메소드 & 데이터 추출</h2>
+<li><%= link_to '주키로 검색 - find', :controller => 'records', :action => 'find'%></li>
+<li><%= link_to '임의의 필드로 검색 - find_by', :controller => 'records', :action => 'find_by'%></li>
+<li><%= link_to '임의의 필드로 검색 - find_by2', :controller => 'records', :action => 'find_by2'%></li>
+<li><%= link_to '조건식 - where', :controller => 'records', :action => 'where'%></li>
+<li><%= link_to '파괴적 조건적용 - where2', :controller => 'records', :action => 'where2'%></li>
+<li><%= link_to '플레이스 홀더를 사용한 조건식', 'records/keyword'%></li>
+<li><%= link_to '부정 조건식', :controller => 'records', :action => 'not'%></li>
+<li><%= link_to '데이터 정렬 - order', :controller => 'records', :action => 'order'%></li>
+<li><%= link_to '데이터 정렬 - reorder', :controller => 'records', :action => 'reorder'%></li>
+<li><%= link_to '추출할 필드를 명시적으로 지정 - select', :controller => 'records', :action => 'select'%></li>
+<li><%= link_to '중복되지 않는 레코드 추철 - distinct', :controller => 'records', :action => 'select2'%></li>
+<li><%= link_to '지정범위의 레코드만 추철 - limit&offset', :controller => 'records', :action => 'offset'%></li>
+<li><%= link_to '페이징 처리 - page ex> .../page/3', :controller => 'records', :action => 'page'%></li>
+<li><%= link_to '마지막 레코드 추출 - last', :controller => 'records', :action => 'last'%></li>
+<li><%= link_to '데이터 그룹화 - groupby', :controller => 'records', :action => 'groupby'%></li>
+<li><%= link_to '그룹결과에 추가조건 적용 - havingby', :controller => 'records', :action => 'havingby'%></li>
+<li><%= link_to '쿼리 메서드로 만든 조건 제거 - unscope', :controller => 'records', :action => 'unscope'%></li>
+<li><%= link_to '모든 도서정보 - none/all', :controller => 'records', :action => 'none', :id => 'all'%></li>
+<li><%= link_to '새로운 도서정보 5개 - none/new', :controller => 'records', :action => 'none', :id => 'new'%></li>
+<li><%= link_to '저렴한 도서정보 5개- none/cheap', :controller => 'records', :action => 'none', :id => 'cheap'%></li>
+<li><%= link_to '키워드 없음 - none/dummy', :controller => 'records', :action => 'none', :id => 'dummy'%></li>
+<li><%= link_to '지정한 필드 데이터를 배열로 추출 - pluck', :controller => 'records', :action => 'pluck'%></li>
+<li><%= link_to '데이터 존재확인 - exists', :controller => 'records', :action => 'exists'%></li>

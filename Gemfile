@@ -59,3 +59,7 @@ gem 'roo'
 # - https://github.com/straydogstudio/axlsx_rails
 gem 'axlsx_rails'
 gem 'zip-zip'
+
+# Gemfile
+source "https://rubygems.org"
+gem "rspec"

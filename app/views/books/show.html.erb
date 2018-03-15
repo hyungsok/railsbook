@@ -1,34 +1,38 @@
 <p id="notice"><%= notice %> </p>
 
-<p>
-  <strong>Isbn:</strong>
-  <%= @book.isbn %>
-</p>
+<% if @book.nil? %>
+  <p> 해당 관련 책이 없습니다.</p>
+<% else %>
+  <p>
+    <strong>Isbn:</strong>
+    <%= @book.isbn %>
+  </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @book.title %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @book.price %>
-</p>
+  <p>
+    <strong>Price:</strong>
+    <%= @book.price %>
+  </p>
 
-<p>
-  <strong>Publish:</strong>
-  <%= @book.publish %>
-</p>
+  <p>
+    <strong>Publish:</strong>
+    <%= @book.publish %>
+  </p>
 
-<p>
-  <strong>Published:</strong>
-  <%= @book.published %>
-</p>
+  <p>
+    <strong>Published:</strong>
+    <%= @book.published %>
+  </p>
 
-<p>
-  <strong>Cd:</strong>
-  <%= @book.cd %>
-</p>
+  <p>
+    <strong>Cd:</strong>
+    <%= @book.cd %>
+  </p>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
+  <%= link_to 'Edit', edit_book_path(@book) %> |
+<% end %>
 <%= link_to 'Back', books_path %>
