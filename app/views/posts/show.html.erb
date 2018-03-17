@@ -1,19 +1,28 @@
-<p id="notice"><%= notice %></p>
+<p class="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <b>Name:</b>
   <%= @post.name %>
 </p>
 
 <p>
-  <strong>Title:</strong>
+  <b>Title:</b>
   <%= @post.title %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <b>Content:</b>
   <%= @post.content %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<h2>Comments</h2>
+<!--render 메소드는 @post.comments 걸랙션을 순회하면서, partial과 동일한 이름으로 각 댓글(comment)를 지역 변수로 할당-->
+<%= render @post.comments %>
+
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
+
+<br/>
+
+<%= link_to 'Edit Post', edit_post_path(@post) %> |
+<%= link_to 'Back to Posts', posts_path %> |
