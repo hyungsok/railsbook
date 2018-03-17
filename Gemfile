@@ -63,3 +63,7 @@ gem 'zip-zip'
 # Gemfile
 source "https://rubygems.org"
 gem "rspec"
+
+# https://github.com/sferik/rails_admin/wiki
+# - 설치 방법 : rails g rails_admin:install
+gem 'rails_admin'
