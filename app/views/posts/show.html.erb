@@ -16,10 +16,17 @@
 </p>
 
 <h2>Comments</h2>
-<!--render 메소드는 @post.comments 걸랙션을 순회하면서, partial과 동일한 이름으로 각 댓글(comment)를 지역 변수로 할당-->
+<!--
+  [ 조각(partial) 폼 렌더링 ]
+  render 메소드는 @post.comments 걸랙션을 순회하면서, partial과 동일한 이름으로 각 댓글(comment)를 지역 변수로 할당
+  -->
 <%= render @post.comments %>
 
 <h2>Add a comment:</h2>
+<!--
+  [ 조각(partial) 뷰 컬렉션 렌더링 ]
+  조각(partial) 뷰 컬렉션 렌더링하기
+  -->
 <%= render "comments/form" %>
 
 <br/>
