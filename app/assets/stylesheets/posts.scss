@@ -2,3 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "materialize";
+
+hr {
+  background-color: red;
+  height: 1px;
+  border: 0;
+}
+
+th {
+  background-color: ghostwhite;
+  height: 50px;
+}
+
+td {
+  height: 50px;
+}

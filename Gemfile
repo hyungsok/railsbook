@@ -68,5 +68,6 @@ gem "rspec"
 # - 설치 방법 : rails g rails_admin:install
 gem 'rails_admin'
 
+# http://materializecss.com/getting-started.html
 # https://github.com/mkhairi/materialize-sass
 gem 'materialize-sass'
