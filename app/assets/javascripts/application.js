@@ -12,4 +12,6 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require jquery
+//= require link_to_add_fields
 //= require_tree .

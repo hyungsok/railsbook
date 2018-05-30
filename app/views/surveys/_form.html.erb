@@ -17,10 +17,24 @@
   </p>
 
   <div class="field">
-    <%= f.fields_for :questions do |builder| %>
-      <%= render 'question_fields', f: builder %>
+    <%= f.fields_for :questions do |ff| %>
+      <fieldset>
+        <%= ff.label :content, "Question" %><br/>
+        <%= ff.text_area :content %><br/>
+        <%= ff.check_box :_destroy %>
+        <%= ff.label :_destroy, "Remove Question" %>
+
+        <%= ff.fields_for :answers do |fff| %>
+          <%= fff.label :content, "Answer" %>
+          <%= fff.text_field :content %>
+          <%= fff.check_box :_destroy %>
+          <%= fff.label :_destroy, "Answer Remove" %>
+        <% end %>
+        <%= link_to_add_fields 'Add Answer', ff, :answers %>
+      </fieldset>
     <% end %>
   </div>
+  <%= link_to_add_fields 'Add Question', f, :questions %>
 
   <div class="actions">
     <%= f.submit %>
