@@ -1,0 +1,29 @@
+<%= form_with(model: survey, local: true) do |f| %>
+  <% if survey.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
+
+      <ul>
+        <% survey.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p class="field">
+    <%= f.label :name, "Survey" %><br/>
+    <%= f.text_area :name, :rows => 3 %>
+  </p>
+
+  <div class="field">
+    <%= f.fields_for :questions do |builder| %>
+      <%= render 'question_fields', f: builder %>
+    <% end %>
+  </div>
+  <br/>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

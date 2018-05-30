@@ -71,3 +71,6 @@ gem 'rails_admin'
 # http://materializecss.com/getting-started.html
 # https://github.com/mkhairi/materialize-sass
 gem 'materialize-sass'
+
+# https://github.com/rjlynch/link_to_add_fields
+gem 'link_to_add_fields'
