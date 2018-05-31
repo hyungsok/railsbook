@@ -11,32 +11,21 @@
     </div>
   <% end %>
 
-  <p class="field">
-    <%= f.label :name, "Survey" %><br/>
+  <p class="row">
+    <%= f.label :name, "Survey", :class => "label"%><br/>
     <%= f.text_area :name, :rows => 3 %>
   </p>
 
   <div class="field">
-    <%= f.fields_for :questions do |ff| %>
-      <fieldset>
-        <%= ff.label :content, "Question" %><br/>
-        <%= ff.text_area :content %><br/>
-        <%= ff.check_box :_destroy %>
-        <%= ff.label :_destroy, "Remove Question" %>
-
-        <%= ff.fields_for :answers do |fff| %>
-          <%= fff.label :content, "Answer" %>
-          <%= fff.text_field :content %>
-          <%= fff.check_box :_destroy %>
-          <%= fff.label :_destroy, "Answer Remove" %>
-        <% end %>
-        <%= link_to_add_fields 'Add Answer', ff, :answers %>
-      </fieldset>
+    <%= f.fields_for :questions do |builder| %>
+      <%= render 'question_fields', f: builder %>
     <% end %>
   </div>
-  <%= link_to_add_fields 'Add Question', f, :questions %>
+  <%= link_to_add_fields 'Add Question', f, :questions, :class => "btn red" %>
 
   <div class="actions">
-    <%= f.submit %>
+    <i class="material-icons right"><%= f.submit :class => "btn blue" %></i>
   </div>
+  <br/>
+  <hr/>
 <% end %>

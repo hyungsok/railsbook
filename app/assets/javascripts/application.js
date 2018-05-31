@@ -14,4 +14,5 @@
 //= require turbolinks
 //= require jquery
 //= require link_to_add_fields
+//= require materialize
 //= require_tree .

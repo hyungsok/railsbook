@@ -7,5 +7,7 @@
   <%= f.fields_for :answers do |builder| %>
     <%= render partial: 'questions/answer_fields', locals: {f: builder} %>
   <% end %>
-  <%= link_to_add_fields 'Add Answer', f, :answers %>
+  <br/>
+  <%= link_to_add_fields 'Add Answer', f, :answers, :class => "btn" %>
+  <br />
 </fieldset>
